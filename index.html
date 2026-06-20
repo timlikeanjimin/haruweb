@@ -63,25 +63,21 @@
   .work-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
   .work{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.18s;display:flex;flex-direction:column}
   .work:hover{transform:translateY(-4px);border-color:rgba(123,108,246,.5)}
-  .thumb{height:158px;display:flex;align-items:flex-end;padding:14px;position:relative}
-  .t1{background:linear-gradient(140deg,#3F5340,#2c3c2d)}
-  .t2{background:linear-gradient(140deg,#1E3A5F,#142943)}
-  .t3{background:linear-gradient(140deg,#2b4a70,#16324f)}
-  .t4{background:linear-gradient(140deg,#4a4385,#2c2858)}
-  .t5{background:linear-gradient(140deg,#1f6f56,#0f3d30)}
-  .t6{background:linear-gradient(140deg,#6257ac,#2b2752)}
-  .badge{position:absolute;top:12px;right:12px;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.4);color:#fff;border:1px solid rgba(255,255,255,.18)}
+  .thumb{height:170px;overflow:hidden;position:relative;border-bottom:1px solid var(--line);background:var(--surface2)}
+  .thumb iframe{position:absolute;top:0;left:0;width:1280px;height:780px;border:0;transform:scale(.227);transform-origin:top left;pointer-events:none}
+  .thumb .ovl{position:absolute;inset:0;z-index:2}
+  .badge{position:absolute;top:12px;right:12px;z-index:3;font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;border:1px solid rgba(255,255,255,.18)}
   .badge.live{background:var(--lime);color:#1b2400;border:none}
-  .thumb .big{font-size:30px;font-weight:800;color:rgba(255,255,255,.92)}
   .work-b{padding:16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
   .work-b h3{font-size:17px;font-weight:700}
   .work-b .ty{font-size:13px;color:var(--muted)}
-  .work-b a.view{margin-top:10px;font-size:13.5px;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:5px}
-  .work-b .soon{margin-top:10px;font-size:13px;color:var(--muted)}
+  .work-b .view{margin-top:10px;font-size:13.5px;font-weight:700;color:var(--accent);display:inline-flex;align-items:center;gap:5px}
+  .work-b .view svg{width:15px;height:15px}
 
   .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
   .svc{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
-  .svc .ic{width:44px;height:44px;border-radius:12px;background:var(--surface2);display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+  .svc .ic{width:44px;height:44px;border-radius:12px;background:var(--surface2);display:grid;place-items:center;margin-bottom:14px;color:var(--accent)}
+  .svc .ic svg{width:24px;height:24px}
   .svc h3{font-size:18px;font-weight:700;margin-bottom:6px}
   .svc p{font-size:14px;color:var(--muted)}
 
@@ -93,8 +89,8 @@
   .price .amt{font-size:30px;font-weight:800;margin:8px 0;letter-spacing:-.02em}
   .price .amt small{font-size:14px;color:var(--muted);font-weight:600}
   .price ul{list-style:none;margin-top:12px;display:grid;gap:7px}
-  .price li{font-size:13px;color:var(--muted)}
-  .price li::before{content:"✓ ";color:var(--lime);font-weight:800}
+  .price li{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:7px;justify-content:center}
+  .price li svg{width:15px;height:15px;color:var(--lime);flex:none}
 
   .cta-band{background:linear-gradient(135deg,#1a1730,#15151e);border:1px solid var(--line);border-radius:24px;padding:48px 32px;text-align:center;position:relative;overflow:hidden}
   .cta-band::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:520px;height:300px;background:radial-gradient(ellipse,rgba(123,108,246,.3),transparent 70%)}
@@ -132,18 +128,37 @@
   <h2>직접 만들어 배포한 작업물</h2>
   <div class="sec-sub">화면 캡처가 아니라 실제로 동작하는 결과물입니다. 휴대폰으로 열어보세요.</div>
   <div class="work-grid">
-    <div class="work"><div class="thumb t1"><span class="badge live">LIVE</span><span class="big">CORE</span></div>
-      <div class="work-b"><h3>코어필라테스</h3><span class="ty">1:1 필라테스 스튜디오 랜딩</span><a class="view" href="https://timlikeanjimin.github.io/corepilates/">라이브 보기 →</a></div></div>
-    <div class="work"><div class="thumb t2"><span class="badge live">LIVE</span><span class="big">TAX</span></div>
-      <div class="work-b"><h3>세무사 상담신청 랜딩</h3><span class="ty">전문직 · 무료상담 유입</span><a class="view" href="https://timlikeanjimin.github.io/semu-demo/">라이브 보기 →</a></div></div>
-    <div class="work"><div class="thumb t3"><span class="badge live">LIVE</span><span class="big">⚓</span></div>
-      <div class="work-b"><h3>메이크타임</h3><span class="ty">시간관리 PWA 웹앱</span><a class="view" href="https://timlikeanjimin.github.io/make-time/">라이브 보기 →</a></div></div>
-    <div class="work"><div class="thumb t2"><span class="badge live">LIVE</span><span class="big">SELLO</span></div>
-      <div class="work-b"><h3>셀로</h3><span class="ty">서비스 소개·대기자 랜딩</span><a class="view" href="https://timlikeanjimin.github.io/sello/">라이브 보기 →</a></div></div>
-    <div class="work"><div class="thumb t5"><span class="badge">웹앱</span><span class="big">$</span></div>
-      <div class="work-b"><h3>모의투자</h3><span class="ty">주식·코인 실시간 가상매매</span><span class="soon">로컬 데모</span></div></div>
-    <div class="work"><div class="thumb t6"><span class="badge live">LIVE</span><span class="big">🌙</span></div>
-      <div class="work-b"><h3>꿈결</h3><span class="ty">AI 꿈기록 모바일 앱</span><a class="view" href="https://timlikeanjimin.github.io/dreamlog/">라이브 보기 →</a></div></div>
+
+    <a class="work" href="https://timlikeanjimin.github.io/corepilates/" target="_blank" rel="noopener">
+      <div class="thumb"><span class="badge live">LIVE</span><iframe src="https://timlikeanjimin.github.io/corepilates/" loading="lazy" scrolling="no" title="코어필라테스 미리보기" tabindex="-1" aria-hidden="true"></iframe><span class="ovl"></span></div>
+      <div class="work-b"><h3>코어필라테스</h3><span class="ty">1:1 필라테스 스튜디오 랜딩</span>
+        <span class="view">라이브 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+
+    <a class="work" href="https://timlikeanjimin.github.io/semu-demo/" target="_blank" rel="noopener">
+      <div class="thumb"><span class="badge live">LIVE</span><iframe src="https://timlikeanjimin.github.io/semu-demo/" loading="lazy" scrolling="no" title="세무사 상담신청 랜딩 미리보기" tabindex="-1" aria-hidden="true"></iframe><span class="ovl"></span></div>
+      <div class="work-b"><h3>세무사 상담신청 랜딩</h3><span class="ty">전문직 · 무료상담 유입</span>
+        <span class="view">라이브 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+
+    <a class="work" href="https://timlikeanjimin.github.io/make-time/" target="_blank" rel="noopener">
+      <div class="thumb"><span class="badge live">LIVE</span><iframe src="https://timlikeanjimin.github.io/make-time/" loading="lazy" scrolling="no" title="메이크타임 미리보기" tabindex="-1" aria-hidden="true"></iframe><span class="ovl"></span></div>
+      <div class="work-b"><h3>메이크타임</h3><span class="ty">시간관리 PWA 웹앱</span>
+        <span class="view">라이브 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+
+    <a class="work" href="https://timlikeanjimin.github.io/sello/" target="_blank" rel="noopener">
+      <div class="thumb"><span class="badge live">LIVE</span><iframe src="https://timlikeanjimin.github.io/sello/" loading="lazy" scrolling="no" title="셀로 미리보기" tabindex="-1" aria-hidden="true"></iframe><span class="ovl"></span></div>
+      <div class="work-b"><h3>셀로</h3><span class="ty">서비스 소개·대기자 랜딩</span>
+        <span class="view">라이브 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+
+    <a class="work" href="https://timlikeanjimin.github.io/dreamlog/" target="_blank" rel="noopener">
+      <div class="thumb"><span class="badge live">LIVE</span><iframe src="https://timlikeanjimin.github.io/dreamlog/" loading="lazy" scrolling="no" title="꿈결 미리보기" tabindex="-1" aria-hidden="true"></iframe><span class="ovl"></span></div>
+      <div class="work-b"><h3>꿈결</h3><span class="ty">AI 꿈기록 모바일 앱</span>
+        <span class="view">라이브 보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span></div>
+    </a>
+
   </div>
 </div></section>
 
@@ -152,9 +167,9 @@
   <h2>이런 걸 만듭니다</h2>
   <div class="sec-sub">한 페이지부터 작동하는 웹앱까지. 빠르고 깔끔하게.</div>
   <div class="svc-grid">
-    <div class="svc"><div class="ic">🛬</div><h3>랜딩페이지</h3><p>사업·이벤트·모집·예약 신청을 받는 1페이지. 광고용으로 바로 쓸 수 있게.</p></div>
-    <div class="svc"><div class="ic">📊</div><h3>웹앱·대시보드</h3><p>계산기·관리도구·실시간 데이터 화면 등 '작동하는' 웹앱.</p></div>
-    <div class="svc"><div class="ic">⚙️</div><h3>간단 자동화</h3><p>반복 작업·문서 생성·알림 같은 소규모 자동화 스크립트.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19h18"/><path d="M5 19V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12"/><path d="M9 19v-5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5"/><path d="M8 9h2"/><path d="M14 9h2"/></svg></div><h3>랜딩페이지</h3><p>사업·이벤트·모집·예약 신청을 받는 1페이지. 광고용으로 바로 쓸 수 있게.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15v-3"/><path d="M12 15V8"/><path d="M16 15v-5"/></svg></div><h3>웹앱·대시보드</h3><p>계산기·관리도구·실시간 데이터 화면 등 '작동하는' 웹앱.</p></div>
+    <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h3>간단 자동화</h3><p>반복 작업·문서 생성·알림 같은 소규모 자동화 스크립트.</p></div>
   </div>
 </div></section>
 
@@ -163,9 +178,9 @@
   <h2>투명한 시작 가격</h2>
   <div class="sec-sub">필요한 페이지를 한 줄만 남겨주시면 견적·일정을 1시간 내 답변드립니다.</div>
   <div class="price-grid">
-    <div class="price"><div class="nm">STANDARD</div><div class="amt">15<small>만원~</small></div><ul><li>1페이지(섹션 4)</li><li>모바일 반응형</li><li>3일 · 수정 1회</li></ul></div>
-    <div class="price feat"><div class="nm">DELUXE</div><div class="amt">35<small>만원~</small></div><ul><li>섹션 6~7</li><li>문의폼·GA·도메인</li><li>4일 · 수정 2회</li></ul></div>
-    <div class="price"><div class="nm">PREMIUM</div><div class="amt">65<small>만원~</small></div><ul><li>섹션 8+ · 애니메이션</li><li>카톡·예약 연동</li><li>6일 · 수정 3회</li></ul></div>
+    <div class="price"><div class="nm">STANDARD</div><div class="amt">15<small>만원~</small></div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>1페이지(섹션 4)</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>모바일 반응형</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>3일 · 수정 1회</li></ul></div>
+    <div class="price feat"><div class="nm">DELUXE</div><div class="amt">35<small>만원~</small></div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>섹션 6~7</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>문의폼·GA·도메인</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4일 · 수정 2회</li></ul></div>
+    <div class="price"><div class="nm">PREMIUM</div><div class="amt">65<small>만원~</small></div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>섹션 8+ · 애니메이션</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>카톡·예약 연동</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>6일 · 수정 3회</li></ul></div>
   </div>
 </div></section>
 
@@ -180,7 +195,9 @@
       <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
       <button type="submit" class="btn btn-accent" style="justify-content:center">문의 보내기 →</button>
     </form>
-    <div id="inqSuccess" style="display:none;position:relative;max-width:430px;margin:0 auto;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(123,108,246,.12)">✓ 문의가 접수되었습니다. 곧 연락드릴게요!</div>
+    <div id="inqSuccess" style="display:none;position:relative;max-width:430px;margin:0 auto;padding:18px;border:1px solid var(--line);border-radius:14px;background:rgba(123,108,246,.12)">
+      <span style="display:inline-flex;align-items:center;gap:8px"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.5 2.5 4.5-5"/></svg>문의가 접수되었습니다. 곧 연락드릴게요!</span>
+    </div>
   </div>
 </div></section>
 
@@ -196,7 +213,7 @@
     btn.textContent='보내는 중...'; btn.disabled=true;
     fetch('https://formsubmit.co/ajax/rkdalwjd080522@gmail.com',{
       method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({이름:f['이름'].value, 연락처:f['연락처'].value, 문의내용:f['문의내용'].value, _subject:'[하루웹] 새 제작 문의 🔔', _template:'table'})
+      body:JSON.stringify({이름:f['이름'].value, 연락처:f['연락처'].value, 문의내용:f['문의내용'].value, _subject:'[하루웹] 새 제작 문의', _template:'table'})
     }).then(function(r){return r.json();}).then(function(){
       f.style.display='none'; document.getElementById('inqSuccess').style.display='block';
     }).catch(function(){ btn.textContent='문의 보내기 →'; btn.disabled=false; alert('전송 중 오류가 발생했어요. 잠시 후 다시 시도해주세요.'); });
